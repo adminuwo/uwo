@@ -1,0 +1,67 @@
+<link rel="stylesheet" href="style.css">
+
+<!-- ================= NAVBAR ================= -->
+<header class="navbar">
+  <div class="nav-container">
+
+    <!-- LOGO -->
+    <div class="nav-logo" onclick="window.location.href='index.html'">
+      <img src="images/logo..webp" alt="UWO Logo">
+    </div>
+
+    <!-- DESKTOP NAV -->
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About UWO™</a>
+
+      <!-- OUR PROJECTS DROPDOWN -->
+      <div class="projects-dropdown">
+        <span class="projects-link">Our Projects ▾</span>
+        <div class="projects-menu">
+          <a href="https://ai-mall.in" target="_blank">AI Mall™</a>
+          <a href="efv.html">EFV™</a>
+        </div>
+      </div>
+
+      <a href="our-team.html">Our Team</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+    <!-- MOBILE HAMBURGER -->
+    <div class="hamburger" onclick="toggleDrawer()">☰</div>
+
+  </div>
+</header>
+
+<!-- ================= MOBILE DRAWER ================= -->
+<div id="mobileDrawer" class="mobile-drawer">
+
+  <a href="index.html">Home</a>
+  <a href="about.html">About UWO™</a>
+
+  <div class="mobile-projects-toggle" onclick="toggleMobileProjects()">
+    Our Projects ▾
+  </div>
+
+  <div id="mobileProjects" class="mobile-projects">
+    <a href="https://ai-mall.in" target="_blank">AI Mall™</a>
+    <a href="efv.html">EFV™</a>
+  </div>
+
+  <a href="our-team.html">Our Team</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<script>
+  function toggleDrawer() {
+    const drawer = document.getElementById("mobileDrawer");
+    const overlay = document.getElementById("drawerOverlay");
+    if (drawer) drawer.classList.toggle("open");
+    if (overlay) overlay.classList.toggle("active");
+  }
+
+  function toggleMobileProjects() {
+    const projects = document.getElementById("mobileProjects");
+    if (projects) projects.classList.toggle("open");
+  }
+</script>

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UWO™ | Contact Us</title>
+
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+  <script src="main.js" defer></script>
+</head>
+
+<body>
+  <!-- ================= OVERLAY ================= -->
+  <div class="drawer-overlay" id="drawerOverlay" onclick="toggleDrawer()"></div>
+
+  <!-- ================= NAVBAR ================= -->
+  <header class="navbar">
+    <div class="nav-container">
+      <div class="nav-logo" onclick="window.location.href='index.html'">
+        <img src="images/logo..webp" alt="UWO Logo" />
+      </div>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About UWO™</a>
+        <div class="projects-dropdown">
+          <span class="projects-link">Our Projects ▾</span>
+          <div class="projects-menu">
+            <a href="https://ai-mall.in" target="_blank">AI Mall™</a>
+            <a href="efv.html" target="_blank">EFV™</a>
+          </div>
+        </div>
+        <a href="our-team.html">Our Team</a>
+        <a href="contact.html" class="active">Contact</a>
+      </nav>
+      <div class="hamburger" onclick="toggleDrawer()">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= MOBILE DRAWER ================= -->
+  <div id="mobileDrawer" class="mobile-drawer">
+    <a href="index.html" onclick="toggleDrawer()">Home</a>
+    <a href="about.html" onclick="toggleDrawer()">About UWO™</a>
+    <div class="mobile-projects-toggle" onclick="toggleMobileProjects()">
+      Our Projects <span>▾</span>
+    </div>
+    <div id="mobileProjects" class="mobile-projects">
+      <a href="https://ai-mall.in" target="_blank">AI Mall™</a>
+      <a href="efv.html" target="_blank">EFV™</a>
+    </div>
+    <a href="our-team.html" onclick="toggleDrawer()">Our Team</a>
+    <a href="contact.html" onclick="toggleDrawer()">Contact</a>
+  </div>
+
+  <!-- ================= HERO ================= -->
+  <section class="hero hero-centered"
+    style="min-height: 75vh; background-image:url('images/contact-hero-user.jpg'); background-size: cover; background-position: center 40%; background-repeat: no-repeat; display: flex; flex-direction: column; justify-content: flex-start; padding-top: 10vh;">
+    <div class="hero-content-centered" data-aos="fade-up">
+      <h1>Get in Touch</h1>
+      <p>
+        Whether you are exploring partnerships, platforms, or opportunities —
+        we’d love to hear from you.
+      </p>
+    </div>
+  </section>
+
+  <!-- ================= CONTACT FORM ================= -->
+  <section class="section section-gold"
+    style="border-top: 4px solid var(--primary); border-bottom: 4px solid var(--primary);">
+    <div class="container">
+      <div style="max-width: 600px; margin: 0 auto;">
+        <h2 class="section-title-left" data-aos="fade-right">
+          Contact Form
+        </h2>
+
+        <div class="contact-form" style="max-width: 100%;" data-aos="fade-up" data-aos-delay="300"
+          data-aos-duration="1000">
+          <div style="display: grid; grid-template-columns: 1fr; gap: 10px;">
+            <div>
+              <label>Full Name</label>
+              <input type="text" id="name" placeholder="Your name" data-aos="fade-up" data-aos-delay="400" />
+            </div>
+
+            <div>
+              <label>Email Address</label>
+              <input type="email" id="email" placeholder="your@email.com" data-aos="fade-up" data-aos-delay="500" />
+            </div>
+
+            <div>
+              <label>Purpose</label>
+              <select id="purpose" data-aos="fade-up" data-aos-delay="600">
+                <option value="Business">Business</option>
+                <option value="Partnership">Partnership</option>
+                <option value="Media">Media</option>
+              </select>
+            </div>
+
+            <div>
+              <label>Message</label>
+              <textarea rows="4" id="message" placeholder="Write your message..." data-aos="fade-up"
+                data-aos-delay="700"></textarea>
+            </div>
+          </div>
+
+          <button type="button" class="btn btn-primary" style="width: 100%; margin-top: 20px;" onclick="sendMessage()">
+            Send Message
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= GLOBAL FOOTPRINT ================= -->
+  <section class="section flagship-white">
+    <div class="container" style="text-align: center">
+      <h2 class="section-title" data-aos="zoom-in" data-aos-duration="1000">
+        Have an idea or challenge in mind?
+      </h2>
+      <p class="section-subtitle" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
+        Our team collaborates seamlessly to design, build, and scale digital
+        solutions.
+      </p>
+
+      <a href="https://api.whatsapp.com/send?phone=918358990909" target="_blank" rel="noopener noreferrer"
+        onclick="openWhatsApp(event)" class="btn btn-glow">
+        Start a Project
+      </a>
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <div class="container">
+      <p>UWO™ - Unified Web Options & Services Pvt. Ltd. &copy; 2024</p>
+
+      <div class="social-links">
+        <a href="mailto:admin@uwo24.com" class="social-icon-wrapper" title="Email Us">
+          <img src="images/Gmail_Logo_512px-removebg-preview.png" alt="Email">
+        </a>
+        <a href="https://wa.me/918358990909" target="_blank" class="social-icon-wrapper" title="WhatsApp">
+          <img src="images/whatsapp.svg" alt="WhatsApp">
+        </a>
+        <a href="https://facebook.com" target="_blank" class="social-icon-wrapper" title="Facebook">
+          <img src="images/facebook..webp" alt="Facebook">
+        </a>
+        <a href="https://www.instagram.com/uwo_business/" target="_blank" class="social-icon-wrapper" title="Instagram">
+          <img src="images/instagram-logo-transparent-background-2..webp" alt="Instagram">
+        </a>
+        <a href="https://www.linkedin.com/company/uwo-business/" target="_blank" class="social-icon-wrapper"
+          title="LinkedIn">
+          <img src="images/linkedin..webp" alt="LinkedIn">
+        </a>
+        <a href="https://x.com/uwo_business" target="_blank" class="social-icon-wrapper" title="Twitter">
+          <img src="images/twitter..webp" alt="Twitter">
+        </a>
+        <a href="https://www.youtube.com/channel/UC_YQo0Y8bX54gsl8k4D9jvA" target="_blank" class="social-icon-wrapper"
+          title="YouTube">
+          <img src="images/youtube..webp" alt="YouTube">
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- AOS Script -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ once: true, offset: 50, duration: 800 });
+    function toggleDrawer() {
+      document.getElementById("mobileDrawer").classList.toggle("open");
+      document.getElementById("drawerOverlay").classList.toggle("active");
+    }
+    function toggleMobileProjects() {
+      document.getElementById("mobileProjects").classList.toggle("open");
+    }
+    // Try opening WhatsApp app first on mobile; fall back to web if unavailable
+    function openWhatsApp(e) {
+      try {
+        e = e || window.event;
+        if (e && e.preventDefault) e.preventDefault();
+        var phone = '918358990909';
+        var text = 'Hello UWO, I want to start a project';
+        var appUrl = 'whatsapp://send?phone=' + phone + '&text=' + encodeURIComponent(text);
+        var webUrl = 'https://api.whatsapp.com/send?phone=' + phone + '&text=' + encodeURIComponent(text);
+        var isMobile = /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+        if (isMobile) {
+          // Try app; if it doesn't open within 1.2s, open web fallback in a new tab
+          window.location = appUrl;
+          setTimeout(function () {
+            window.open(webUrl, '_blank');
+          }, 1200);
+        } else {
+          // Desktop: open WhatsApp Web in new tab
+          window.open(webUrl, '_blank');
+        }
+      } catch (err) {
+        // On error, fallback to web link
+        window.open('https://api.whatsapp.com/send?phone=918358990909', '_blank');
+      }
+    }
+  </script>
+</body>
+
+</html>

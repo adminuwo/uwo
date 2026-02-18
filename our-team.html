@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UWO™| Our Team</title>
+
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <script src="main.js" defer></script>
+</head>
+
+<body>
+
+  <!-- ================= OVERLAY ================= -->
+  <div class="drawer-overlay" id="drawerOverlay" onclick="toggleDrawer()"></div>
+
+  <!-- ================= NAVBAR ================= -->
+  <header class="navbar">
+    <div class="nav-container">
+      <div class="nav-logo" onclick="window.location.href='index.html'">
+        <img src="images/logo..webp" alt="UWO™ Logo">
+      </div>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About UWO™</a>
+        <div class="projects-dropdown">
+          <span class="projects-link">Our Projects ▾</span>
+          <div class="projects-menu">
+            <a href="https://ai-mall.in" target="_blank">AI Mall™</a>
+            <a href="efv.html" target="_blank">EFV™</a>
+          </div>
+        </div>
+        <a href="our-team.html" class="active">Our Team</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="hamburger" onclick="toggleDrawer()">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= MOBILE DRAWER ================= -->
+  <div id="mobileDrawer" class="mobile-drawer">
+    <a href="index.html" onclick="toggleDrawer()">Home</a>
+    <a href="about.html" onclick="toggleDrawer()">About UWO™</a>
+    <div class="mobile-projects-toggle" onclick="toggleMobileProjects()">
+      Our Projects <span>▾</span>
+    </div>
+    <div id="mobileProjects" class="mobile-projects">
+      <a href="https://ai-mall.in" target="_blank">AI Mall™</a>
+      <a href="efv.html" target="_blank">EFV™</a>
+    </div>
+    <a href="our-team.html" onclick="toggleDrawer()">Our Team</a>
+    <a href="contact.html" onclick="toggleDrawer()">Contact</a>
+  </div>
+
+  <!-- ================= HERO ================= -->
+  <section class="hero hero-centered" style="min-height: 50vh; background-image:url('images/team-bg..webp');">
+    <div class="hero-content-centered" data-aos="fade-up">
+      <h1>Our Team</h1>
+      <p>
+        The minds behind the machines. A collective of engineers, researchers,
+        and strategists building the future of intelligence.
+      </p>
+    </div>
+  </section>
+
+  <!-- ================= TEAM GRID ================= -->
+  <section class="section section-gold">
+    <div class="container">
+      <h2 class="section-title" data-aos="zoom-in" data-aos-duration="1000">Meet the Team Members</h2>
+
+      <div class="features-grid">
+
+        <!-- Founder -->
+        <div class="feature-card" data-aos="flip-up" data-aos-delay="100" data-aos-duration="1000"
+          style="text-align: center;">
+          <div
+            style="width: 240px; height: 240px; background: rgba(214, 165, 89, 0.1); border-radius: 50%; margin: 0 auto 20px; overflow: hidden; border: 3px solid var(--primary);">
+            <img src="images/founder..webp" alt="Founder"
+              style="width: 100%; height: 100%; object-fit: cover; object-position: center; border-radius: 50%;">
+          </div>
+          <h3>Gurumukh P. Ahuja</h3>
+          <h4 style="color: var(--primary);">Founder & Director</h4>
+        </div>
+
+        <!-- Member 1 -->
+        <div class="feature-card" data-aos="flip-up" data-aos-delay="200" data-aos-duration="1000"
+          style="text-align: center;">
+          <div
+            style="width: 240px; height: 240px; background: rgba(214, 165, 89, 0.1); border-radius: 50%; margin: 0 auto 20px; overflow: hidden; border: 3px solid var(--primary);">
+            <img src="images/team-3..webp" alt="Team Member"
+              style="width: 100%; height: 100%; object-fit: cover; object-position: center; border-radius: 50%;">
+          </div>
+          <h3>Anjali Ahuja</h3>
+          <h4 style="color: var(--primary);">Co-founder</h4>
+        </div>
+
+        <!-- Member 2 -->
+        <div class="feature-card" data-aos="flip-up" data-aos-delay="350" data-aos-duration="1000"
+          style="text-align: center;">
+          <div
+            style="width: 240px; height: 240px; background: rgba(214, 165, 89, 0.1); border-radius: 50%; margin: 0 auto 20px; overflow: hidden; border: 3px solid var(--primary);">
+            <img src="images/team-7..webp" alt="Team Member"
+              style="width: 100%; height: 100%; object-fit: cover; object-position: center; border-radius: 50%;">
+          </div>
+          <h3>Sonali Jain</h3>
+          <h4 style="color: var(--primary);">Business Development Manager</h4>
+        </div>
+
+        <!-- Member 4 -->
+        <div class="feature-card" data-aos="flip-up" data-aos-delay="650" data-aos-duration="1000"
+          style="text-align: center;">
+          <div
+            style="width: 240px; height: 240px; background: rgba(214, 165, 89, 0.1); border-radius: 50%; margin: 0 auto 20px; overflow: hidden; border: 3px solid var(--primary);">
+            <img src="images/team-8..webp" alt="Team Member"
+              style="width: 100%; height: 100%; object-fit: cover; object-position: center; border-radius: 50%;">
+          </div>
+          <h3>Sreshthi Sunpal</h3>
+          <h4 style="color: var(--primary);">Marketing Manager</h4>
+        </div>
+
+
+        <!-- Member 5 -->
+        <div class="feature-card" data-aos="flip-up" data-aos-delay="800" data-aos-duration="1000"
+          style="text-align: center;">
+          <div
+            style="width: 240px; height: 240px; background: rgba(214, 165, 89, 0.1); border-radius: 50%; margin: 0 auto 20px; overflow: hidden; border: 3px solid var(--primary);">
+            <img src="images/team-9..webp" alt="Team Member"
+              style="width: 100%; height: 100%; object-fit: cover; object-position: center center;">
+          </div>
+          <h3>Sakshi Jain</h3>
+          <h4 style="color: var(--primary);">Product Designer</h4>
+        </div>
+
+        <!-- Member 6 (Placeholder) -->
+        <div class="feature-card" data-aos="flip-up" data-aos-delay="950" data-aos-duration="1000"
+          style="text-align: center;">
+          <div
+            style="width: 240px; height: 240px; background: rgba(214, 165, 89, 0.1); border-radius: 50%; margin: 0 auto 20px; overflow: hidden; border: 3px solid var(--primary);">
+            <img src="images/team-4..webp" alt="Team Member"
+              style="width: 100%; height: 100%; object-fit: cover; object-position: center center;">
+          </div>
+          <h3>Ritesh Shrivastav</h3>
+          <h4 style="color: var(--primary);">Product Manager</h4>
+        </div>
+
+        <!-- Member 7 (Placeholder) -->
+        <div class="feature-card" data-aos="flip-up" data-aos-delay="1100" data-aos-duration="1000"
+          style="text-align: center;">
+          <div
+            style="width: 240px; height: 240px; background: rgba(214, 165, 89, 0.1); border-radius: 50%; margin: 0 auto 20px; overflow: hidden; border: 3px solid var(--primary);">
+            <img src="images/team-1..webp" alt="Team Member"
+              style="width: 100%; height: 100%; object-fit: cover; object-position: center center;">
+          </div>
+          <h3>Aman Patel</h3>
+          <h4 style="color: var(--primary);">HR & Operations</h4>
+        </div>
+
+
+
+        <!-- Member 10 (Placeholder) -->
+        <div class="feature-card" data-aos="flip-up" data-aos-delay="1550" data-aos-duration="1000"
+          style="text-align: center;">
+          <div
+            style="width: 240px; height: 240px; background: rgba(214, 165, 89, 0.1); border-radius: 50%; margin: 0 auto 20px; overflow: hidden; border: 3px solid var(--primary);">
+            <img src="images/team-2..webp" alt="Team Member"
+              style="width: 100%; height: 100%; object-fit: cover; object-position: center center;">
+          </div>
+          <h3>Vishal Vashani</h3>
+          <h4 style="color: var(--primary);">Accounts Executive</h4>
+        </div>
+
+        <!-- Member 3 -->
+        <div class="feature-card" data-aos="flip-up" data-aos-delay="500" data-aos-duration="1000"
+          style="text-align: center;">
+          <div
+            style="width: 240px; height: 240px; background: rgba(214, 165, 89, 0.1); border-radius: 50%; margin: 0 auto 20px; overflow: hidden; border: 3px solid var(--primary);">
+            <img src="images/team-10..webp" alt="Team Member"
+              style="width: 100%; height: 100%; object-fit: cover; object-position: center center;">
+          </div>
+          <h3>Sakshi Thakur</h3>
+          <h4 style="color: var(--primary);">Full Stack Developer</h4>
+        </div>
+
+
+
+        <!-- Member 8 (Placeholder) -->
+        <div class="feature-card" data-aos="flip-up" data-aos-delay="1250" data-aos-duration="1000"
+          style="text-align: center;">
+          <div
+            style="width: 240px; height: 240px; background: rgba(214, 165, 89, 0.1); border-radius: 50%; margin: 0 auto 20px; overflow: hidden; border: 3px solid var(--primary);">
+            <img src="images/team-6..webp" alt="Team Member"
+              style="width: 100%; height: 100%; object-fit: cover; object-position: center center;">
+          </div>
+          <h3>Sanskar Sahu</h3>
+          <h4 style="color: var(--primary);">Mern Stack Developer</h4>
+        </div>
+
+        <!-- Member 9 (Placeholder) -->
+        <div class="feature-card" data-aos="flip-up" data-aos-delay="1400" data-aos-duration="1000"
+          style="text-align: center;">
+          <div
+            style="width: 240px; height: 240px; background: rgba(214, 165, 89, 0.1); border-radius: 50%; margin: 0 auto 20px; overflow: hidden; border: 3px solid var(--primary);">
+            <img src="images/team-5..webp" alt="Team Member"
+              style="width: 100%; height: 100%; object-fit: cover; object-position: center center;">
+          </div>
+          <h3>Gauhar Iftekhar</h3>
+          <h4 style="color: var(--primary);">Web Developer</h4>
+        </div>
+
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <div class="container">
+      <p>UWO™ - Unified Web Options & Services Pvt. Ltd. &copy; 2024</p>
+
+
+      <div class="social-links">
+        <a href="mailto:admin@uwo24.com" class="social-icon-wrapper" title="Email Us">
+          <img src="images/Gmail_Logo_512px-removebg-preview.png" alt="Email">
+        </a>
+        <a href="https://wa.me/918358990909" target="_blank" class="social-icon-wrapper" title="WhatsApp">
+          <img src="images/whatsapp.svg" alt="WhatsApp">
+        </a>
+        <a href="https://facebook.com" target="_blank" class="social-icon-wrapper" title="Facebook">
+          <img src="images/facebook..webp" alt="Facebook">
+        </a>
+        <a href="https://www.instagram.com/uwo_business/" target="_blank" class="social-icon-wrapper" title="Instagram">
+          <img src="images/instagram-logo-transparent-background-2..webp" alt="Instagram">
+        </a>
+        <a href="https://www.linkedin.com/company/uwo-business/" target="_blank" class="social-icon-wrapper"
+          title="LinkedIn">
+          <img src="images/linkedin..webp" alt="LinkedIn">
+        </a>
+        <a href="https://x.com/uwo_business" target="_blank" class="social-icon-wrapper" title="Twitter">
+          <img src="images/twitter..webp" alt="Twitter">
+        </a>
+        <a href="https://www.youtube.com/channel/UC_YQo0Y8bX54gsl8k4D9jvA" target="_blank" class="social-icon-wrapper"
+          title="YouTube">
+          <img src="images/youtube..webp" alt="YouTube">
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- AOS Script -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ once: true, offset: 50, duration: 800 });
+    function toggleDrawer() {
+      document.getElementById("mobileDrawer").classList.toggle("open");
+      document.getElementById("drawerOverlay").classList.toggle("active");
+    }
+    function toggleMobileProjects() {
+      document.getElementById("mobileProjects").classList.toggle("open");
+    }
+  </script>
+
+</body>
+
+</html>
