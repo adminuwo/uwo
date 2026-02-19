@@ -95,13 +95,17 @@
               <input type="email" id="email" placeholder="your@email.com" data-aos="fade-up" data-aos-delay="500" />
             </div>
 
-            <div>
-              <label>Purpose</label>
-              <select id="purpose" data-aos="fade-up" data-aos-delay="600">
-                <option value="Business">Business</option>
-                <option value="Partnership">Partnership</option>
-                <option value="Media">Media</option>
-              </select>
+            <div data-aos="fade-up" data-aos-delay="600" style="position:relative; z-index:2;">
+              <label for="purpose">Purpose</label>
+              <div class="csel-wrap" id="cselWrap">
+                <!-- Native select hidden, used only for value -->
+                <select id="purpose" class="csel-native" aria-hidden="true">
+                  <option value="Business">Business</option>
+                  <option value="Partnership">Partnership</option>
+                  <option value="Media">Media</option>
+                </select>
+                <!-- Custom visual dropdown, built by JS -->
+              </div>
             </div>
 
             <div>

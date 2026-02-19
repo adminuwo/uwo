@@ -1591,3 +1591,312 @@ button:focus,
 a.btn:focus {
   box-shadow: none !important;
 }
+
+/* ================= CUSTOM MODAL POPUP ================= */
+#uwo-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+#uwo-modal-overlay.uwo-modal-visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.uwo-modal {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 32px;
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+  transform: translateY(20px);
+  opacity: 0;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  position: relative;
+  border-top: 4px solid #D6A559;
+}
+
+#uwo-modal-overlay.uwo-modal-visible .uwo-modal {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.uwo-modal-icon {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.uwo-modal-icon svg {
+  width: 60px;
+  height: 60px;
+}
+
+.uwo-modal-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 12px;
+  font-family: 'Outfit', sans-serif;
+}
+
+.uwo-modal-message {
+  font-size: 1rem;
+  color: #64748b;
+  margin-bottom: 24px;
+  line-height: 1.5;
+  font-family: 'Inter', sans-serif;
+}
+
+.uwo-modal-btn {
+  padding: 12px 36px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  font-family: 'Inter', sans-serif;
+  cursor: pointer;
+  border: none;
+  background: #D6A559;
+  color: #fff;
+  transition: all 0.2s ease;
+  width: 100%;
+}
+
+.uwo-modal-btn:hover {
+  background: #b07c2a;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(214, 165, 89, 0.2);
+}
+
+.uwo-modal-btn:active {
+  transform: translateY(0);
+}
+
+/* ================= STYLED SELECT DROPDOWN ================= */
+.contact-form select,
+select#purpose {
+  appearance: none !important;
+  -webkit-appearance: none !important;
+  -moz-appearance: none !important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23D6A559' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E") !important;
+  background-repeat: no-repeat !important;
+  background-position: right 16px center !important;
+  background-size: 18px !important;
+  padding-right: 48px !important;
+  cursor: pointer !important;
+  background-color: #f8f8f8 !important;
+  border: 1px solid rgba(214, 165, 89, 0.35) !important;
+  color: #1e293b !important;
+  font-weight: 500 !important;
+  transition: all 0.3s ease !important;
+}
+
+.contact-form select:hover,
+select#purpose:hover {
+  border-color: rgba(214, 165, 89, 0.7) !important;
+  background-color: #fff !important;
+  box-shadow: 0 4px 14px rgba(214, 165, 89, 0.15) !important;
+}
+
+.contact-form select:focus,
+select#purpose:focus {
+  border-color: var(--primary) !important;
+  background-color: #ffffff !important;
+  outline: none !important;
+  box-shadow: 0 0 0 3px rgba(214, 165, 89, 0.2), 0 4px 14px rgba(214, 165, 89, 0.15) !important;
+}
+
+/* ============================================================
+   CUSTOM SELECT DROPDOWN — Clean & Professional
+   ============================================================ */
+
+.csel-native {
+  display: none !important;
+}
+
+.csel-wrap {
+  position: relative;
+  width: 100%;
+  margin-bottom: 24px;
+  user-select: none;
+  z-index: 50;
+}
+
+/* ── Trigger ── */
+.csel-trigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 14px 16px;
+  border-radius: 12px;
+  border: 1px solid rgba(214, 165, 89, 0.4);
+  background: #f8f8f8;
+  font-family: 'Inter', sans-serif;
+  cursor: pointer;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+  text-align: left;
+  outline: none;
+  color: #1e293b;
+  gap: 0;
+}
+
+.csel-t-label {
+  flex: 1;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #1e293b;
+  letter-spacing: 0.01em;
+}
+
+.csel-arrow {
+  flex-shrink: 0;
+  transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0.7;
+}
+
+.csel-trigger:hover {
+  border-color: rgba(214, 165, 89, 0.7);
+  background: #fff;
+  box-shadow: 0 3px 12px rgba(214, 165, 89, 0.12);
+}
+
+.csel-wrap.csel-open .csel-trigger {
+  border-color: #D6A559;
+  background: #fff;
+  border-radius: 12px 12px 0 0;
+  border-bottom-color: transparent;
+  box-shadow: 0 0 0 3px rgba(214, 165, 89, 0.14);
+}
+
+.csel-wrap.csel-open .csel-arrow {
+  opacity: 1;
+}
+
+/* ── Options Panel ── */
+.csel-panel {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: #fff;
+  border: 1px solid #D6A559;
+  border-top: none;
+  border-radius: 0 0 12px 12px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 600;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1), 0 0 0 0 transparent;
+}
+
+.csel-wrap.csel-open .csel-panel {
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1), 0 4px 12px rgba(214, 165, 89, 0.12);
+}
+
+/* Thin gold separator at top of panel */
+.csel-panel::before {
+  content: '';
+  display: block;
+  height: 1px;
+  background: linear-gradient(to right, rgba(214, 165, 89, 0.5), rgba(250, 190, 86, 0.2), transparent);
+  margin: 0 16px;
+}
+
+/* ── Each Option ── */
+.csel-option {
+  display: flex;
+  align-items: center;
+  padding: 12px 16px 12px 20px;
+  cursor: pointer;
+  position: relative;
+  transition: background 0.18s ease;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.csel-option:last-child {
+  border-bottom: none;
+  border-radius: 0 0 12px 12px;
+}
+
+.csel-option:hover {
+  background: rgba(214, 165, 89, 0.07);
+}
+
+/* Gold left accent — selected */
+.csel-option.csel-selected::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 22%;
+  bottom: 22%;
+  width: 3px;
+  border-radius: 0 3px 3px 0;
+  background: #D6A559;
+}
+
+.csel-option.csel-selected {
+  background: rgba(214, 165, 89, 0.06);
+}
+
+.cso-label {
+  flex: 1;
+  font-size: 0.97rem;
+  font-weight: 500;
+  color: #334155;
+  font-family: 'Inter', sans-serif;
+  letter-spacing: 0.01em;
+  transition: color 0.15s ease;
+}
+
+.csel-option:hover .cso-label {
+  color: #1e293b;
+}
+
+.csel-option.csel-selected .cso-label {
+  color: #1e293b;
+  font-weight: 600;
+}
+
+.cso-check {
+  flex-shrink: 0;
+  opacity: 0;
+  transition: opacity 0.18s ease;
+}
+
+.csel-option.csel-selected .cso-check {
+  opacity: 1;
+}
+
+/* ── Hidden elements from old design ── */
+.csel-t-icon,
+.csel-t-body,
+.csel-t-desc,
+.cso-icon,
+.cso-body,
+.cso-desc {
+  display: none !important;
+}
+
+@media (max-width: 600px) {
+  .csel-trigger {
+    padding: 13px 14px;
+  }
+
+  .csel-option {
+    padding: 12px 14px 12px 18px;
+  }
+}
