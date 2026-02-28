@@ -809,3 +809,124 @@
 .faq-card::-webkit-scrollbar-thumb:hover {
     background: #cbd5e1;
 }
+
+/* ================= MOBILE RESPONSIVENESS ================= */
+@media screen and (max-width: 500px) {
+    #uwo-chatbot-widget {
+        bottom: 15px;
+        right: 15px;
+    }
+
+    .chatbot-panel {
+        position: fixed;
+        /* Switch to fixed for better mobile centering control if needed */
+        bottom: 85px;
+        right: 15px;
+        left: 15px;
+        width: auto;
+        height: calc(100vh - 120px);
+        max-height: 600px;
+        border-radius: 20px;
+        z-index: 100000;
+    }
+
+    .chatbot-toggle-btn {
+        width: 55px;
+        height: 55px;
+    }
+
+    .chatbot-tooltip {
+        display: none !important;
+        /* Hide tooltip on mobile to save space */
+    }
+
+    /* Adjust Hero for Mobile */
+    .home-hero {
+        padding: 30px 20px 25px;
+    }
+
+    .home-hero h1 {
+        font-size: 24px;
+    }
+
+    .home-hero p {
+        font-size: 14px;
+    }
+
+    /* Adjust Content Spacing */
+    .home-content {
+        padding: 10px;
+        gap: 8px;
+    }
+
+    .faq-item {
+        padding: 12px 15px;
+    }
+
+    .chat-cta-card {
+        padding: 12px 15px;
+    }
+
+    /* Chat View Adjustments */
+    .chatbot-header {
+        padding: 12px 15px;
+    }
+
+    .chatbot-header-info h3 {
+        font-size: 16px;
+    }
+
+    .chat-area {
+        padding: 15px;
+    }
+
+    .message {
+        max-width: 90%;
+        font-size: 13.5px;
+        padding: 10px 14px;
+    }
+
+    .chatbot-input-area {
+        padding: 12px;
+    }
+
+    .chatbot-input-area input {
+        height: 42px !important;
+        font-size: 14px !important;
+    }
+
+    .chatbot-send-btn {
+        width: 42px;
+        height: 42px;
+    }
+
+    /* Collector View Adjustments */
+    .view-overlay {
+        padding: 20px;
+    }
+
+    .collector-logo {
+        margin-bottom: 20px;
+    }
+
+    .collector-content h2 {
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+}
+
+/* Small Device Portrait Support (iPhone SE size) */
+@media screen and (max-height: 660px) and (max-width: 500px) {
+    .chatbot-panel {
+        height: calc(100vh - 100px);
+        bottom: 80px;
+    }
+
+    .home-hero {
+        padding: 20px 15px;
+    }
+
+    .home-hero h1 {
+        font-size: 20px;
+    }
+}
