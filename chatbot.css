@@ -365,6 +365,13 @@
     transform: scale(1.1);
 }
 
+.close-panel-btn,
+.chatbot-close-btn {
+    position: relative;
+    z-index: 999999;
+    pointer-events: auto !important;
+}
+
 /* Home Content */
 .home-content {
     padding: 12px;

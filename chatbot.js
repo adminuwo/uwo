@@ -32,29 +32,52 @@ document.addEventListener('DOMContentLoaded', () => {
         return email;
     };
 
-    // Toggle Chat Panel
-    const toggleChat = (e) => {
-        if (e) e.stopPropagation();
-        chatbotPanel.classList.toggle('active');
-        chatbotWidget.classList.toggle('chat-open');
-        console.log('Toggle Chat:', chatbotPanel.classList.contains('active') ? 'Opened' : 'Closed');
-    };
-
     const closeChat = (e) => {
-        if (e) e.stopPropagation();
+        if (e) {
+            e.stopPropagation();
+            e.preventDefault();
+        }
         chatbotPanel.classList.remove('active');
         chatbotWidget.classList.remove('chat-open');
         console.log('Chat explicitly closed');
+
+        // Mobile fallback: ensure display is hidden if active class isn't enough
+        if (window.innerWidth <= 600) {
+            chatbotPanel.style.display = 'none';
+        }
+    };
+    window.closeChat = closeChat;
+
+    const toggleChat = (e) => {
+        if (e) e.stopPropagation();
+
+        const isActive = chatbotPanel.classList.contains('active');
+        if (isActive) {
+            closeChat();
+        } else {
+            chatbotPanel.classList.add('active');
+            chatbotWidget.classList.add('chat-open');
+            if (window.innerWidth <= 600) {
+                chatbotPanel.style.display = 'flex';
+            }
+            console.log('Chat Opened');
+        }
     };
 
-    toggleBtn.addEventListener('click', toggleChat);
+    // Explicit Close Handling
+    const attachCloseListeners = () => {
+        const buttons = chatbotWidget.querySelectorAll('.close-panel-btn, .chatbot-close-btn');
+        buttons.forEach(btn => {
+            // Remove old listener if any to avoid double triggers
+            btn.removeEventListener('click', closeChat);
+            btn.addEventListener('click', closeChat);
+        });
+    };
 
-    // Robust Close Handling with Delegation
-    chatbotWidget.addEventListener('click', (e) => {
-        if (e.target.closest('.close-panel-btn') || e.target.closest('.chatbot-close-btn')) {
-            closeChat(e);
-        }
-    });
+    // Initial attachment
+    attachCloseListeners();
+
+    toggleBtn.addEventListener('click', toggleChat);
 
     // View Switching Logic (with collector guard)
     const showView = (viewName) => {
