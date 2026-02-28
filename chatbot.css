@@ -139,6 +139,8 @@
     opacity: 1;
     visibility: visible;
     transform: translateY(0) scale(1);
+    display: flex !important;
+    /* Force flex display when active */
 }
 
 /* View Overlay (Email Collector) */
@@ -881,6 +883,8 @@
 
     .chatbot-panel.active {
         display: flex !important;
+        opacity: 1 !important;
+        visibility: visible !important;
         transform: none !important;
         /* No transition scale on full screen for better perf */
     }

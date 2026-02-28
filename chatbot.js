@@ -41,10 +41,10 @@ document.addEventListener('DOMContentLoaded', () => {
         chatbotWidget.classList.remove('chat-open');
         console.log('Chat explicitly closed');
 
-        // Mobile fallback: ensure display is hidden if active class isn't enough
-        if (window.innerWidth <= 600) {
-            chatbotPanel.style.display = 'none';
-        }
+        // Force hide transition/visibility to ensure it closes
+        chatbotPanel.style.display = 'none';
+        chatbotPanel.style.visibility = 'hidden';
+        chatbotPanel.style.opacity = '0';
     };
     window.closeChat = closeChat;
 
@@ -57,9 +57,9 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
             chatbotPanel.classList.add('active');
             chatbotWidget.classList.add('chat-open');
-            if (window.innerWidth <= 600) {
-                chatbotPanel.style.display = 'flex';
-            }
+            chatbotPanel.style.display = 'flex';
+            chatbotPanel.style.visibility = 'visible';
+            chatbotPanel.style.opacity = '1';
             console.log('Chat Opened');
         }
     };
