@@ -260,37 +260,12 @@
   <section id="dashboard" style="max-width: 1000px; padding: 40px; background: rgba(255, 255, 255, 0.95);">
     <h2 id="dashboardTitle">Admin Dashboard</h2>
 
-    <!-- 1. Main Menu (Initial View) -->
-    <div id="main-menu" style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px;">
-      <div class="nav-card" onclick="showView('uwo')"
-        style="cursor: pointer; padding: 40px; border-radius: 20px; text-align: center; background: linear-gradient(135deg, #fdfbf7 0%, #f5f0e8 100%); border: 2px solid rgba(214, 165, 89, 0.3); transition: all 0.3s ease;">
-        <div style="margin-bottom: 20px;">
-          <img src="images/logo..webp" alt="UWO Logo"
-            style="height: 60px; width: auto; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1));">
-        </div>
-        <h3 style="color: #D6A559; font-size: 1.5rem;">UWO Web</h3>
-        <p style="color: #666; font-size: 14px;">Manage Contacts & Subscriptions</p>
-      </div>
-
-      <div class="nav-card" onclick="showView('efv')"
-        style="cursor: pointer; padding: 40px; border-radius: 20px; text-align: center; background: linear-gradient(135deg, #fdfbf7 0%, #f5f0e8 100%); border: 2px solid rgba(214, 165, 89, 0.3); transition: all 0.3s ease;">
-        <div style="margin-bottom: 20px;">
-          <img src="images/EFV.png" alt="EFV™ Logo"
-            style="height: 60px; width: auto; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1));">
-        </div>
-        <h3 style="color: #2980b9; font-size: 1.5rem;">EFV Web</h3>
-        <p style="color: #666; font-size: 14px;">Manage EFV Ecosystem Mails</p>
-      </div>
-    </div>
 
     <!-- 2. UWO Detail View -->
     <div id="uwo-view" style="display: none;">
       <div
         style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; border-bottom: 2px solid #D6A559; padding-bottom: 10px;">
         <h2 style="margin: 0; text-align: left;">UWO Web Management</h2>
-        <button onclick="showView('main')"
-          style="width: auto; padding: 8px 20px; background: #333; color: #fff !important; font-size: 14px;">←
-          Back</button>
       </div>
 
       <div style="display: flex; flex-direction: column; gap: 30px;">
@@ -308,28 +283,6 @@
       </div>
     </div>
 
-    <!-- 3. EFV Detail View -->
-    <div id="efv-view" style="display: none;">
-      <div
-        style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; border-bottom: 2px solid #2980b9; padding-bottom: 10px;">
-        <h2 style="margin: 0; text-align: left; background: none; -webkit-text-fill-color: #2980b9;">EFV™ Web Management
-        </h2>
-        <button onclick="showView('main')"
-          style="width: auto; padding: 8px 20px; background: #333; color: #fff !important; font-size: 14px;">←
-          Back</button>
-      </div>
-
-      <div>
-        <h3 style="color: #444; margin-bottom: 15px; font-size: 1.2rem; display: flex; align-items: center; gap: 10px;">
-          <span
-            style="background: #2980b9; color: white; padding: 2px 10px; border-radius: 5px; font-size: 0.8rem;">Sub-Category</span>
-          Mail Section
-        </h3>
-        <div id="efv-mail-section"
-          style="display: flex; flex-direction: column; gap: 15px; max-height: 500px; overflow-y: auto; padding-right: 5px;">
-        </div>
-      </div>
-    </div>
 
     <button id="logoutBtn" class="logout-btn" onclick="logout()" style="margin-top: 40px;">Logout</button>
   </section>

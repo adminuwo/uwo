@@ -7,6 +7,7 @@
   <title>UWO™ | Contact Us</title>
 
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="chatbot.css" />
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 
   <script src="main.js" defer></script>
@@ -211,6 +212,141 @@
       }
     }
   </script>
+
+  <!-- UWO Chatbot Widget -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <div id="uwo-chatbot-widget">
+    <div class="chatbot-toggle-btn">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M7 14V17C7 18.1046 7.89543 19 9 19H12.5L16 22.5V19H17C18.1046 19 19 18.1046 19 17V10C19 8.89543 18.1046 8 17 8H16"
+          stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        <path
+          d="M15 15H11.5L8 18.5V15H7C5.89543 15 5 14.1046 5 13V6C5 4.89543 5.89543 4 7 4H15C16.1046 4 17 4.89543 17 6V13C17 14.1046 16.1046 15 15 15Z"
+          stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+      </svg>
+    </div>
+    <div class="chatbot-tooltip">Need Help?</div>
+
+    <div class="chatbot-panel">
+      <!-- Email Collection Form (Overlay) -->
+      <div id="email-collector" class="view-overlay" style="display: none;">
+        <div class="collector-header">
+          <button class="close-collector-btn"><i class="fa-solid fa-chevron-down"></i></button>
+        </div>
+        <div class="collector-content">
+          <div class="collector-logo">
+            <img src="images/logo..webp" alt="UWO™ Logo">
+          </div>
+          <h2>Please leave your email address so we can contact you:</h2>
+          <div class="form-group">
+            <input type="email" id="user-email-input" placeholder="Enter your email...">
+          </div>
+          <div class="gdpr-checkbox">
+            <input type="checkbox" id="gdpr-agree">
+            <label for="gdpr-agree">
+              I understand and acknowledge that UWO™ (with its registered office in India) is the controller of my
+              personal data. I understand and acknowledge that any of my personal data will be processed and transmitted
+              in accordance with the General Data Protection Regulation (GDPR).
+            </label>
+          </div>
+          <button id="submit-email-btn" class="collector-send-btn">Send</button>
+        </div>
+      </div>
+
+      <!-- Home View -->
+      <div class="home-view" id="home-view">
+        <div class="home-hero">
+          <div class="header-top">
+            <div class="menu-dots" title="Options">
+              <i class="fa-solid fa-ellipsis-vertical"></i>
+            </div>
+          </div>
+          <h1>Hi there! 👋</h1>
+          <p>AI chat powered by our team - how can we help you?</p>
+        </div>
+
+        <div class="home-content">
+          <div class="faq-card">
+            <div class="faq-item" onclick="handleFaqClick('What is UWO™?')">
+              <span>What is UWO™?</span>
+              <i class="fa-solid fa-chevron-right"></i>
+            </div>
+            <div class="faq-item" onclick="handleFaqClick('Help Center')">
+              <span>Help Center</span>
+              <i class="fa-solid fa-chevron-right"></i>
+            </div>
+            <div class="faq-item" onclick="handleFaqClick('How to partner with us?')">
+              <span>How to partner with us?</span>
+              <i class="fa-solid fa-chevron-right"></i>
+            </div>
+          </div>
+
+          <div class="chat-cta-card" id="start-chat-cta">
+            <div class="chat-cta-info">
+              <h4>Chat with UWO™ AI</h4>
+              <p>Have questions? UWO™ AI is here to assist you</p>
+            </div>
+            <div class="chat-cta">
+              <i class="fa-solid fa-paper-plane"></i>
+            </div>
+          </div>
+        </div>
+
+        <div class="powered-by">
+          Powered by UWO™ AI Agent
+        </div>
+
+        <div class="bottom-nav">
+          <div class="nav-item active" id="nav-home">
+            <i class="fa-solid fa-house"></i>
+            <span>Home</span>
+          </div>
+          <div class="nav-item" id="nav-chat">
+            <i class="fa-solid fa-comment-dots"></i>
+            <span>Chat</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Chat View -->
+      <div class="chat-view" id="chat-view" style="display: none;">
+        <div class="chatbot-header">
+          <button class="back-to-home-btn" title="Back to Home" onclick="showView('home')">
+            <i class="fa-solid fa-chevron-left"></i>
+          </button>
+          <div class="chatbot-header-info">
+            <h3>UWO™ AI Assistant</h3>
+          </div>
+        </div>
+        <div class="chat-area" id="chat-area">
+          <!-- Messages will appear here -->
+        </div>
+        <div class="chatbot-input-area">
+          <input type="text" id="chatbot-input" placeholder="Write a message...">
+          <div class="chatbot-send-btn">
+            <i class="fa-solid fa-paper-plane"></i>
+          </div>
+        </div>
+
+        <div class="powered-by">
+          Powered by UWO™ AI Agent
+        </div>
+
+        <div class="bottom-nav">
+          <div class="nav-item" id="nav-home-chat">
+            <i class="fa-solid fa-house"></i>
+            <span>Home</span>
+          </div>
+          <div class="nav-item active" id="nav-chat-inner">
+            <i class="fa-solid fa-comment-dots"></i>
+            <span>Chat</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="chatbot.js"></script>
 </body>
 
 </html>

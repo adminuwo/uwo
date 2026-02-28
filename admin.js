@@ -37,7 +37,7 @@ async function showDashboard() {
 
   document.getElementById("loginSection").style.display = "none";
   document.getElementById("dashboard").style.display = "block";
-  showView('main'); // Start with the main category cards
+  showView('uwo'); // Start directly with the UWO web management
 
   try {
     // 1. Fetch Contact Messages
@@ -80,58 +80,16 @@ async function showDashboard() {
       uwoContactsBox.appendChild(card);
     });
 
-    // 2. Fetch Subscribers
-    try {
-      const subResponse = await fetch(`${API_URL}/subscribers`, {
-        headers: { "Authorization": token },
-      });
-      const subData = await subResponse.json();
-      const efvMailSectionBox = document.getElementById("efv-mail-section");
+    // 2. Fetch subscribers if needed
 
-      efvMailSectionBox.innerHTML = "";
-
-      if (subData.length === 0) {
-        const emptyMsg = "<p style='text-align:center; color:#666;'>No subscribers found.</p>";
-        efvMailSectionBox.innerHTML = emptyMsg;
-      }
-
-      subData.forEach(s => {
-        // Create card helper
-        const createSubCard = (borderColor) => {
-          const card = document.createElement("div");
-          card.className = "data-card";
-          card.style.borderLeftColor = borderColor;
-          const dateStr = s.created_at || s.createdAt || new Date().toISOString();
-          const date = new Date(dateStr).toLocaleString();
-
-          card.innerHTML = `
-                  <div style="display:flex; justify-content:space-between; align-items:center;">
-                      <div>
-                          <p style="font-size:16px;"><strong>📧 Email:</strong> ${s.email}</p>
-                          <p style="font-size:12px; color:#666;"><strong>Subscribed at:</strong> ${date}</p>
-                      </div>
-                      <button style="padding:5px 10px; font-size:12px; background: #e74c3c; color:white; border:none; border-radius:4px; cursor:pointer; width:auto !important;" onclick="deleteSubscriber('${s._id}')">
-                          Delete
-                      </button>
-                  </div>
-              `;
-          return card;
-        };
-
-        // Add to EFV Web > Mail Section
-        efvMailSectionBox.appendChild(createSubCard("#2980b9"));
-      });
-
-    } catch (err) {
-      console.error("Failed to load subscribers", err);
-      document.getElementById("efv-mail-section").innerHTML = "<p style='color:red; text-align:center;'>Error loading subscribers.</p>";
-    }
+    // 2. Fetch Subscribers (Optional: Removed EFV related logic)
 
   } catch (error) {
     alert("Failed to load dashboard data");
     console.error(error);
   }
 }
+
 
 // 🗑️ DELETE MESSAGE
 async function deleteMessage(id) {
@@ -156,51 +114,15 @@ async function deleteMessage(id) {
   }
 }
 
-// 🗑️ DELETE SUBSCRIBER
-async function deleteSubscriber(id) {
-  const confirmDelete = confirm("Are you sure you want to remove this subscriber permanently?");
-  if (!confirmDelete) return;
 
-  const token = localStorage.getItem("uwo_token");
-
-  try {
-    const response = await fetch(`${API_URL}/subscribers/${id}`, {
-      method: "DELETE",
-      headers: { "Authorization": token },
-    });
-
-    if (response.ok) {
-      showDashboard();
-    } else {
-      alert("Failed to delete subscriber");
-    }
-  } catch (error) {
-    alert("Error deleting subscriber");
-  }
-}
-
-// 🔄 NAVIGATION LOGIC
 function showView(viewName) {
   const mainMenu = document.getElementById("main-menu");
   const uwoView = document.getElementById("uwo-view");
-  const efvView = document.getElementById("efv-view");
   const title = document.getElementById("dashboardTitle");
-  const logoutBtn = document.getElementById("logoutBtn");
 
-  // Reset displays
-  mainMenu.style.display = "none";
-  uwoView.style.display = "none";
-  efvView.style.display = "none";
-  logoutBtn.style.display = "block";
-
-  if (viewName === 'main') {
-    mainMenu.style.display = "grid";
-    title.style.display = "block";
-  } else if (viewName === 'uwo') {
+  if (viewName === 'uwo') {
+    if (mainMenu) mainMenu.style.display = "none";
     uwoView.style.display = "block";
-    title.style.display = "none";
-  } else if (viewName === 'efv') {
-    efvView.style.display = "block";
     title.style.display = "none";
   }
 }

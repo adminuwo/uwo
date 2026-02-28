@@ -1,5 +1,5 @@
 // 🔹 LOCAL BACKEND API URL
-const API_URL = "https://uwo-backend-743928421487.asia-south1.run.app/api";
+const API_URL = "http://localhost:5000/api";
 
 // UI helpers
 function toggleDrawer() {
